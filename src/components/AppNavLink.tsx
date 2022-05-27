@@ -10,6 +10,7 @@ type NabLinkWithActiveStyleProps = {
 const activeStyle = {
   fontWeight: 600,
   opacity: 1,
+  color: '#666666',
 };
 
 export default function AppNavLink({ to, children }: NabLinkWithActiveStyleProps) {
@@ -22,7 +23,8 @@ export default function AppNavLink({ to, children }: NabLinkWithActiveStyleProps
 
 const StyledNavLink = styled(NavLink)`
   margin: 20px;
-  color: inherit;
-  text-decoration: none;
+  color: '#CCCCCC';
   opacity: 0.5;
+  text-decoration: none;
+  font-size: 18px;
 `;

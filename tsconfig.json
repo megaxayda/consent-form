@@ -16,7 +16,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
-    "inlineSourceMap": true,
+    "inlineSourceMap": true
   },
   "include": ["./src"],
   "exclude": ["node_modules"]

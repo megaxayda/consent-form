@@ -3,6 +3,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import AppNavLink from './components/AppNavLink';
+import HomePage from './pages/home/HomePage';
 import RegisterPage from './pages/register/RegisterPage';
 
 const Header = styled.header`
@@ -18,8 +19,11 @@ function App() {
         <AppNavLink to="consents">Consents</AppNavLink>
       </Header>
       <Routes>
-        <Route path="/" element={<RegisterPage />}></Route>
-        <Route path="/consents" element={<div>hello</div>} />
+        <Route path="/" element={<HomePage />}>
+          <Route path="" element={<RegisterPage />} />
+          <Route path="consent" element={<RegisterPage />} />
+        </Route>
+        <Route path="consents" element={<div>hello</div>} />
       </Routes>
     </div>
   );
