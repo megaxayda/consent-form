@@ -1,18 +1,23 @@
 import styled from '@emotion/styled';
+import { CONSENT_TEXTS } from 'constants/consentTexts';
+import { LANGUAGE } from 'constants/language';
+import useSpeakConsentText from 'hooks/useSpeakConsentText';
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { selectConsentFormValue } from 'selectors/consentSelector';
 
 export default function RegisterPage() {
+  const { language = LANGUAGE.ENGLISH } = useSelector(selectConsentFormValue);
+
+  useSpeakConsentText();
+
+  const firstPara = CONSENT_TEXTS[language].firstPara;
+  const secondPara = CONSENT_TEXTS[language].secondPara;
+
   return (
     <Wrapper>
-      <StyledP>
-        You understand that by using the site or site services, you agree to be bound by
-        this agreement. If you do not accept this agreement in its entirety, you must not
-        access or use the site or the site services.
-      </StyledP>
-      <p>
-        Do you agree to this agreement? Please respond by saying &ldquo;Yes&ldquo; or
-        &ldquo;No&ldquo;.
-      </p>
+      <StyledP>{firstPara}</StyledP>
+      <p>{secondPara}</p>
     </Wrapper>
   );
 }
