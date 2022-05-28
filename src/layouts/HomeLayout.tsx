@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-export default function HomePage() {
+export default function HomeLayout() {
   return (
     <div>
       <StyledH1>Consent Form</StyledH1>

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import React, { ReactChild } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useMatch, useResolvedPath } from 'react-router-dom';
 
 type NabLinkWithActiveStyleProps = {
   to: string;
@@ -14,8 +14,11 @@ const activeStyle = {
 };
 
 export default function AppNavLink({ to, children }: NabLinkWithActiveStyleProps) {
+  // const resolved = useResolvedPath(to);
+  // const match = useMatch({ path: resolved.pathname, end: false });
+
   return (
-    <StyledNavLink style={({ isActive }) => (isActive ? activeStyle : {})} to={to}>
+    <StyledNavLink to={to} style={({ isActive }) => (isActive ? activeStyle : {})}>
       {children}
     </StyledNavLink>
   );
