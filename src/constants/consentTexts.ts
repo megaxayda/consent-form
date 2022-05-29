@@ -3,6 +3,10 @@ import { LANGUAGE } from './language';
 export const CONSENT_TEXTS = {
   [LANGUAGE.ENGLISH]: {
     code: 'en-US',
+    response: 'You responded',
+    yes: 'Yes',
+    no: 'No',
+    invalid: 'Invalid response',
     firstPara:
       'You understand that by using the site or site services, you agree to be bound by this agreement. If you do not accept this agreement in its entirety, you must not access or use the site or the site services.',
     secondPara: 'Do you agree to this agreement? Please respond by saying "Yes" or "No".',
@@ -11,6 +15,10 @@ export const CONSENT_TEXTS = {
   },
   [LANGUAGE.FRENCH]: {
     code: 'fr-FR',
+    response: 'Tu as répondu',
+    yes: 'Oui',
+    no: 'Non',
+    invalid: 'Réponse invalide',
     firstPara:
       "Vous comprenez qu'en utilisant le site ou les services du site, vous acceptez d'être lié par cet accord. Si vous n'acceptez pas cet accord dans son intégralité, vous ne devez pas accéder ou utiliser le site ou les services du site.",
     secondPara:

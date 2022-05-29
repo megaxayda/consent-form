@@ -3,5 +3,6 @@ export enum ROUTE {
   EMPTY = '',
   HOME = 'home',
   CONSENT = 'consent',
+  SUCCESS = 'success',
   CONSENTS = 'consents',
 }

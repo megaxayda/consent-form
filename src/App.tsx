@@ -2,20 +2,14 @@ import './index.css';
 
 import styled from '@emotion/styled';
 import { ROUTE } from 'constants/routes';
-import { ROUTE } from 'constants/routes';
 import React, { useEffect } from 'react';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { Outlet, useNavigate } from 'react-router-dom';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
 
-import App from './App';
 import AppNavLink from './components/AppNavLink';
 import HomeLayout from './layouts/HomeLayout';
 import ConsentPage from './pages/consent/ConsentPage';
+import ConsentSuccessPage from './pages/consentSuccess/ConsentSuccessPage';
 import RegisterPage from './pages/register/RegisterPage';
-import { store } from './store';
 
 const Header = styled.header`
   text-align: right;
@@ -41,6 +35,7 @@ export default function App() {
         <Route path={ROUTE.HOME} element={<HomeLayout />}>
           <Route path={ROUTE.EMPTY} element={<RegisterPage />} />
           <Route path={ROUTE.CONSENT} element={<ConsentPage />} />
+          <Route path={ROUTE.SUCCESS} element={<ConsentSuccessPage />} />
         </Route>
         <Route path={ROUTE.CONSENTS} element={<div>hello</div>} />
       </Routes>
