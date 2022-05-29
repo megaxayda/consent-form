@@ -11,7 +11,7 @@ export default function HomeLayout() {
   );
 }
 
-const StyledH1 = styled.h1`
+export const StyledH1 = styled.h1`
   text-align: center;
   color: #444444;
 `;

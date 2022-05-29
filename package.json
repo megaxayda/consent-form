@@ -1,5 +1,5 @@
 {
-  "name": "vite-reactts-eslint-prettier",
+  "name": "consent-form",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
@@ -14,6 +14,7 @@
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@reduxjs/toolkit": "^1.8.2",
+    "base64-blob": "^1.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",

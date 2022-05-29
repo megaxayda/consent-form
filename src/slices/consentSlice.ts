@@ -12,6 +12,7 @@ export interface ConsentState {
   readyListen: boolean;
   doneListen: boolean;
   audioUrl?: string;
+  audioBase64?: string;
   consentResponse?: boolean;
 }
 
@@ -24,6 +25,7 @@ const initialState: ConsentState = {
   readyListen: false,
   doneListen: false,
   audioUrl: undefined,
+  audioBase64: undefined,
   consentResponse: undefined,
 };
 
@@ -46,6 +48,9 @@ export const consentSlice = createSlice({
     setAudioUrl: (state, action: PayloadAction<string | undefined>) => {
       state.audioUrl = action.payload;
     },
+    setAudioBase64: (state, action: PayloadAction<string | undefined>) => {
+      state.audioBase64 = action.payload;
+    },
     setConsentResponse: (state, action: PayloadAction<boolean | undefined>) => {
       state.consentResponse = action.payload;
     },
@@ -59,6 +64,7 @@ export const {
   setReadyListen,
   setDoneListen,
   setAudioUrl,
+  setAudioBase64,
   setConsentResponse,
   resetConsentForm,
 } = consentSlice.actions;

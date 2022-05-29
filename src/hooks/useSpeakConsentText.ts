@@ -3,7 +3,7 @@ import { LANGUAGE } from 'constants/language';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectConsentFormValue } from 'selectors/consentSelector';
-import { setDoneSpeak, setReadyListen } from 'slices/consentSlice';
+import { setDoneSpeak } from 'slices/consentSlice';
 
 export default function useSpeakConsentText() {
   const dispatch = useDispatch();

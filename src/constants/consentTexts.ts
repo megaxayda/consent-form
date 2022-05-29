@@ -3,6 +3,7 @@ import { LANGUAGE } from './language';
 export const CONSENT_TEXTS = {
   [LANGUAGE.ENGLISH]: {
     code: 'en-US',
+    name: 'English',
     response: 'You responded',
     yes: 'Yes',
     no: 'No',
@@ -15,6 +16,7 @@ export const CONSENT_TEXTS = {
   },
   [LANGUAGE.FRENCH]: {
     code: 'fr-FR',
+    name: 'French',
     response: 'Tu as répondu',
     yes: 'Oui',
     no: 'Non',

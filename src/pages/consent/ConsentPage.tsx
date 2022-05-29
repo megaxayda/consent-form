@@ -10,6 +10,7 @@ import { MdPause, MdRefresh } from 'react-icons/md';
 import { batch, useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
+  selectAudioBase64,
   selectAudioUrl,
   selectConsentFormValue,
   selectConsentResponse,
@@ -35,6 +36,7 @@ export default function ConsentPage() {
   const { name, language = LANGUAGE.ENGLISH } = useSelector(selectConsentFormValue);
   const consentResponse = useSelector(selectConsentResponse);
   const audioUrl = useSelector(selectAudioUrl);
+  const audioBase64 = useSelector(selectAudioBase64);
   const readyListen = useSelector(selectReadyListen);
   const doneListen = useSelector(selectDoneListen);
 
@@ -63,13 +65,18 @@ export default function ConsentPage() {
     audioEle.play();
   };
 
+  const handlePause = () => {
+    audioEle.pause();
+  };
+
   const handleSave = () => {
     batch(() => {
       dispatch(
         saveConsentInfo({
           name: name as string,
+          language,
           consent: consentResponse,
-          audioUrl: audioUrl as string,
+          audioBase64: audioBase64 as string,
         }),
       );
       dispatch(resetConsentForm());
@@ -103,7 +110,7 @@ export default function ConsentPage() {
                 </GreyButton>
               )}
               {play && (
-                <GreyButton onClick={handlePlay}>
+                <GreyButton onClick={handlePause}>
                   <MdPause />
                 </GreyButton>
               )}

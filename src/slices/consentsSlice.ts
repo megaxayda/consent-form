@@ -1,9 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { LANGUAGE } from 'constants/language';
 
-type ConsentInfo = {
+export type ConsentInfo = {
   name: string;
+  language: LANGUAGE;
   consent?: boolean;
-  audioUrl: string;
+  audioBase64: string;
 };
 
 type Consents = {

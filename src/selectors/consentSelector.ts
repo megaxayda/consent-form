@@ -11,3 +11,7 @@ export const selectDoneListen = (state: RootState) => state.consent.doneListen;
 export const selectConsentResponse = (state: RootState) => state.consent.consentResponse;
 
 export const selectAudioUrl = (state: RootState) => state.consent.audioUrl;
+
+export const selectAudioBase64 = (state: RootState) => state.consent.audioBase64;
+
+export const selectConsents = (state: RootState) => state.consents.consents;

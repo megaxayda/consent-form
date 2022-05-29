@@ -2,7 +2,8 @@ import './index.css';
 
 import styled from '@emotion/styled';
 import { ROUTE } from 'constants/routes';
-import React, { useEffect } from 'react';
+import AllConsentsPage from 'pages/allConsents/AllConsentsPage';
+import React from 'react';
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
 
 import AppNavLink from './components/AppNavLink';
@@ -17,13 +18,6 @@ const Header = styled.header`
 `;
 
 export default function App() {
-  // const navigate = useNavigate();
-
-  useEffect(() => {
-    // navigate(ROUTE.HOME + '/' + ROUTE.CONSENT);
-    // navigate(ROUTE.HOME);
-  }, []);
-
   return (
     <div>
       <Header>
@@ -37,7 +31,7 @@ export default function App() {
           <Route path={ROUTE.CONSENT} element={<ConsentPage />} />
           <Route path={ROUTE.SUCCESS} element={<ConsentSuccessPage />} />
         </Route>
-        <Route path={ROUTE.CONSENTS} element={<div>hello</div>} />
+        <Route path={ROUTE.CONSENTS} element={<AllConsentsPage />} />
       </Routes>
       <Outlet />
     </div>

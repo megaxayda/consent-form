@@ -1,20 +1,16 @@
 import { CONSENT_TEXTS } from 'constants/consentTexts';
 import { LANGUAGE } from 'constants/language';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { selectConsentFormValue, selectDoneSpeak } from 'selectors/consentSelector';
 import {
-  selectConsentFormValue,
-  selectDoneSpeak,
-  selectReadyListen,
-} from 'selectors/consentSelector';
-import {
+  setAudioBase64,
   setAudioUrl,
   setConsentResponse,
   setDoneListen,
   setReadyListen,
 } from 'slices/consentSlice';
-
-import initRecorder from './initRecorder';
+import initRecorder from 'utils/initRecorder';
 
 // eslint-disable-next-line no-var
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
@@ -66,7 +62,8 @@ export default function useListenConsentResponse() {
         dispatch(setDoneListen(true));
 
         recorder.stop().then((e) => {
-          dispatch(setAudioUrl(e));
+          dispatch(setAudioUrl(e.audioUrl));
+          dispatch(setAudioBase64(e.base64Audio));
         });
       };
     });
